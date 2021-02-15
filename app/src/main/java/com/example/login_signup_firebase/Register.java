@@ -48,6 +48,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+                String cpassword = mCPassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is required");
@@ -63,6 +64,12 @@ public class Register extends AppCompatActivity {
                     mPassword.setError("Password should be of more than 8 characters");
                     return;
                 }
+
+                if(password.equals(cpassword) != true){
+                    mCPassword.setError("Passwords do not match");
+                    return;
+                }
+
 
 
 
